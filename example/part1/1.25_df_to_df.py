@@ -1,18 +1,4 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "language_info": {
-   "name": "python"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 2
-}
+#%%
+df['sales_date'] = np.datetime64('2024-08-05') + np.arange(365)
+# %%
+df
