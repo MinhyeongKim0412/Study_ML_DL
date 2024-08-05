@@ -69,3 +69,30 @@ plt.figure(figsize=(8, 6))
 sb.countplot(x='pclass', hue='survived', data=titanic)
 plt.title('Survival Count by Pclass')
 plt.show()
+#%%
+import pandas as pd
+import numpy as np
+
+#%%
+df = pd.DataFrame(np.random.randint(60, 101, (10, 3)), columns=['kor', 'eng', 'math'])
+df['name'] = np.random.choice(['a', 'b', 'c'], 10)
+
+#%%
+score1 = pd.DataFrame({'first': [100, 90, 70], 'name': ['c', 'b', 'a']})
+
+#%%
+score2 = pd.DataFrame({'second': [100, 90, 70], 'name': ['b', 'a', 'c']})
+
+#%%
+score1
+
+#%%
+score2
+
+#%%
+for n in np.unique(score1['name']):
+    f = score1.loc[score1['name'] == n, 'first']
+    s = score2.loc[score2['name'] == n, 'second']
+    print(f"{n} ==> {f.values} {s.values}")
+
+# %%
