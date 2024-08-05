@@ -2,7 +2,7 @@
 import pandas as pd
 
 #%%
-file_path = r'C:\Users\kimmi\OneDrive\바탕 화면\KEPCO\KEPCO_class content\T.Lee_SpringBoot,Python\Python_pjt_kmh\health.activity.day_summary.csv.csv'
+file_path = r'C:\Users\kimmi\OneDrive\바탕 화면\KEPCO\KEPCO_class content\T.Lee_SpringBoot,Python\Python_pjt_kmh\2.0.2_health_activity.csv'
 
 #%%
 df1 = pd.read_csv(file_path)
