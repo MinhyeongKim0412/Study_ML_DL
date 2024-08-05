@@ -1,0 +1,6 @@
+{
+    "name": {"pandas": "", "matplotlib": ""},
+    "year": {"pandas": 2008, "matplotlib": 2003},
+    "developer": {"pandas": "Wes McKinney", "matplotlib": "John D. Hunter"},
+    "opensource": {"pandas": "True", "matplotlib": "True"}
+}
