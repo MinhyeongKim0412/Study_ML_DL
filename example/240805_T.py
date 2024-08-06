@@ -1775,7 +1775,8 @@ df.groupby(['class','sex'])[['fare','age']].mean().reset_index()
 
 
 # In[1086]:
-
+import pandas as pd
+import numpy as np
 
 ## 5개의 지점  a,b,c,d,e 
 ## sales
@@ -1810,8 +1811,23 @@ df.groupby(df.location)['sales'].sum()
 df.groupby([df.date.astype('str').str.slice(0,7),'location'])['sales'].sum()
 
 
-# In[ ]:
+#%%
+
+# 월별, 지점별 판매량 합계
+
+# 월별 판매량 1등인 지점
+df_month = df.groupby(['month','location'])['sales'].sum().reset_index()
+df_month_best = df_month.groupby('month')['sales'].max().reset_index()
+
+for i in range(12):
+    month = df_month_best.loc[i,'month']
+    sales = df_month_best.loc[i,'sales']
+    location = df_month[df_month,'location']
+
+# 1년동안 가장 많은 월별 판매량 1위인 지점은?
 
 
 
 
+
+# %%
