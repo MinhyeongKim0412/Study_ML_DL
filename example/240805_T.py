@@ -1149,12 +1149,6 @@ dic  = {'a':1,'b':2}
 type(eval((str(dic))))
 
 
-# In[665]:
-
-
-get_ipython().run_line_magic('pinfo2', 'sns.load_dataset')
-
-
 # In[666]:
 
 
@@ -1844,6 +1838,5 @@ date = np.datetime64('2024-01-01','h') + np.arange(24*365)
 date_time = np.random.choice(date,100_000)
 # %%
 df = pd.DataFrame()
-df['date_time'] =  
 df['usage'] = np.abs(np.random.randn(100_000)*3 +1)
 # %%
