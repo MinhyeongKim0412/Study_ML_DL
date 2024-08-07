@@ -1806,28 +1806,44 @@ df.groupby(df.location)['sales'].sum()
 
 
 # In[1097]:
-
-
 df.groupby([df.date.astype('str').str.slice(0,7),'location'])['sales'].sum()
 
 
 #%%
+import pandas as pd
+
+# 예시 데이터 프레임 (df) 생성
+data = {
+    'month': [1, 1, 2, 2, 3, 3],
+    'location': ['A', 'B', 'A', 'B', 'A', 'B'],
+    'sales': [100, 200, 150, 250, 200, 300]
+}
+df = pd.DataFrame(data)
 
 # 월별, 지점별 판매량 합계
+df_month = df.groupby(['month', 'location'])['sales'].sum().reset_index()
 
 # 월별 판매량 1등인 지점
-df_month = df.groupby(['month','location'])['sales'].sum().reset_index()
-df_month_best = df_month.groupby('month')['sales'].max().reset_index()
+df_month_best = df_month.loc[df_month.groupby('month')['sales'].idxmax()].reset_index(drop=True)
 
-for i in range(12):
-    month = df_month_best.loc[i,'month']
-    sales = df_month_best.loc[i,'sales']
-    location = df_month[df_month,'location']
+# 결과 데이터프레임 초기화
+df_monthly_best_location = pd.DataFrame(columns=['month', 'location', 'sales'])
 
-# 1년동안 가장 많은 월별 판매량 1위인 지점은?
+# 각 월별로 가장 판매량이 높은 지점 찾기
+for i in range(len(df_month_best)):
+    month = df_month_best.loc[i, 'month']
+    sales = df_month_best.loc[i, 'sales']
+    location = df_month_best.loc[i, 'location']
+    tmp_df = pd.DataFrame({'month': [month], 'location': [location], 'sales': [sales]})
+    df_monthly_best_location = pd.concat([df_monthly_best_location, tmp_df], ignore_index=True)
 
-
-
-
-
+print(df_monthly_best_location)
+# %%
+date = np.datetime64('2024-01-01','h') + np.arange(24*365)
+# %%
+date_time = np.random.choice(date,100_000)
+# %%
+df = pd.DataFrame()
+df['date_time'] =  
+df['usage'] = np.abs(np.random.randn(100_000)*3 +1)
 # %%
