@@ -10,7 +10,6 @@ from sklearn.metrics import accuracy_score, f1_score, confusion_matrix
 
 import pandas as pd
 import numpy as np
-
 # %%
 def make_df(x):
     df = x.data
