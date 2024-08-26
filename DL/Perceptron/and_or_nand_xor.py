@@ -246,4 +246,3 @@ X = load_breast_cancer().data
 Y = load_breast_cancer().target
 # %%
 Y
-# %%
